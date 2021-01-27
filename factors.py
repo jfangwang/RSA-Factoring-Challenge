@@ -10,7 +10,10 @@ def factors():
     """open the file"""
     with open(sys.argv[1]) as file:
         for line in file:
-            num1 = int(line)
+            try:
+                num1 = int(line)
+            except:
+                raise(TypeError, "There is a word in this file")
             factor1 = 0
             factor2 = 0
 
